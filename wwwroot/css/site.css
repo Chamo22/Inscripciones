@@ -30,3 +30,12 @@ body {
     transition: .4s;
     margin: 10px
 }
+
+.container-fluid {
+    background-color: #00b;
+    color: #fff;
+}
+
+.navbar-collapse {
+    color: #fff;
+}

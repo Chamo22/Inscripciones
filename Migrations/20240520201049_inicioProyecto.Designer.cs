@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inscripcioness.Migrations
 {
     [DbContext(typeof(InscripcionesContext))]
-    [Migration("20240429213257_inicioProyecto")]
+    [Migration("20240520201049_inicioProyecto")]
     partial class inicioProyecto
     {
         /// <inheritdoc />
