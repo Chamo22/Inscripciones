@@ -18,7 +18,7 @@ namespace Inscripcioness.Models
             //               MultipleActiveResultSets = True;
             //               Encrypt=false");
 
-            string cadenaConexion = "Server=127.0.0.1;Database=inscripcionescontext;User=root;Password=;";
+            string cadenaConexion = "Server=5.57.213.17;Database=smartsof_fabibobadilla;user=smartsof_bobadilla;password=bodadillafabi123";
             optionsBuilder.UseMySql(cadenaConexion,
                 ServerVersion.AutoDetect(cadenaConexion));
         }

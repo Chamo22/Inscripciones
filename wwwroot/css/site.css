@@ -22,20 +22,34 @@ body {
 }
 
 .nav-item:hover {
-    font-size: 18px;
-    color: #00f;
+    font-size: 16px;
 }
 
 .nav-item {
     transition: .4s;
-    margin: 10px
+    margin: 10px;
+    text-decoration-color: none;
 }
 
 .container-fluid {
     background-color: #00b;
     color: #fff;
+    height: 60px !important;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
-.navbar-collapse {
-    color: #fff;
+    .container-fluid navbar-brand {
+        color: #fff;
+    }
+
+nav a.nav-link.text-dark {
+    color: #b9b9b9 !important; /* Cambia el color a azul */
+    font-weight: bold !important;
+    padding: 10px;
+    margin:
 }
+
+    nav a.nav-link.text-dark:hover {
+        color: #fff !important;
+    }
