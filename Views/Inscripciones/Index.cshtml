@@ -1,28 +1,25 @@
-﻿@model IEnumerable<Inscripcioness.Models.Alumno>
+﻿@model IEnumerable<Inscripcioness.Models.Inscripcion>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Alumnos</h1>
+<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear nueva Inscripción</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ApellidoNombre)
+                @Html.DisplayNameFor(model => model.Fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefono)
+                @Html.DisplayNameFor(model => model.Alumno)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Carrera.Nombre)
             </th>
             <th></th>
         </tr>
@@ -32,16 +29,13 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ApellidoNombre)
+                    @Html.DisplayFor(modelItem => item.Fecha)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Telefono)
+                    @Html.DisplayFor(modelItem => item.Alumno.ApellidoNombre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Direccion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
+                    @Html.DisplayFor(modelItem => item.Carrera.Nombre)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

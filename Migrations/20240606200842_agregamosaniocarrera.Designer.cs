@@ -4,6 +4,7 @@ using Inscripcioness.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inscripcioness.Migrations
 {
     [DbContext(typeof(InscripcionesContext))]
-    partial class InscripcionesContextModelSnapshot : ModelSnapshot
+    [Migration("20240606200842_agregamosaniocarrera")]
+    partial class agregamosaniocarrera
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,32 +92,6 @@ namespace Inscripcioness.Migrations
                     b.ToTable("carreras");
                 });
 
-            modelBuilder.Entity("Inscripcioness.Models.DetalleInscripciones", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("InscripcionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MateriaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModalidadCursado")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("InscripcionId");
-
-                    b.HasIndex("MateriaId");
-
-                    b.ToTable("DetalleInscripciones");
-                });
-
             modelBuilder.Entity("Inscripcioness.Models.Inscripcion", b =>
                 {
                     b.Property<int>("Id")
@@ -141,28 +118,6 @@ namespace Inscripcioness.Migrations
                     b.ToTable("Inscripciones");
                 });
 
-            modelBuilder.Entity("Inscripcioness.Models.Materia", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AnioCarreraId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AnioCarreraId");
-
-                    b.ToTable("Materia");
-                });
-
             modelBuilder.Entity("Inscripcioness.Models.AnioCarrera", b =>
                 {
                     b.HasOne("Inscripcioness.Models.Carrera", "Carrera")
@@ -172,25 +127,6 @@ namespace Inscripcioness.Migrations
                         .IsRequired();
 
                     b.Navigation("Carrera");
-                });
-
-            modelBuilder.Entity("Inscripcioness.Models.DetalleInscripciones", b =>
-                {
-                    b.HasOne("Inscripcioness.Models.Inscripcion", "Inscripcion")
-                        .WithMany()
-                        .HasForeignKey("InscripcionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Inscripcioness.Models.Materia", "Materia")
-                        .WithMany()
-                        .HasForeignKey("MateriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Inscripcion");
-
-                    b.Navigation("Materia");
                 });
 
             modelBuilder.Entity("Inscripcioness.Models.Inscripcion", b =>
@@ -210,17 +146,6 @@ namespace Inscripcioness.Migrations
                     b.Navigation("Alumno");
 
                     b.Navigation("Carrera");
-                });
-
-            modelBuilder.Entity("Inscripcioness.Models.Materia", b =>
-                {
-                    b.HasOne("Inscripcioness.Models.AnioCarrera", "AnioCarrera")
-                        .WithMany()
-                        .HasForeignKey("AnioCarreraId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AnioCarrera");
                 });
 #pragma warning restore 612, 618
         }
