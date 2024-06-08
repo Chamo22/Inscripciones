@@ -89,6 +89,7 @@ namespace Inscripcioness.Migrations
                     b.ToTable("carreras");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Inscripcioness.Models.DetalleInscripciones", b =>
                 {
                     b.Property<int>("Id")
@@ -115,6 +116,8 @@ namespace Inscripcioness.Migrations
                     b.ToTable("DetalleInscripciones");
                 });
 
+=======
+>>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
             modelBuilder.Entity("Inscripcioness.Models.Inscripcion", b =>
                 {
                     b.Property<int>("Id")
@@ -136,6 +139,7 @@ namespace Inscripcioness.Migrations
 
                     b.HasIndex("AlumnoID");
 
+<<<<<<< HEAD
                     b.HasIndex("CarreraId");
 
                     b.ToTable("Inscripciones");
@@ -193,6 +197,11 @@ namespace Inscripcioness.Migrations
                     b.Navigation("Materia");
                 });
 
+=======
+                    b.ToTable("Inscripciones");
+                });
+
+>>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
             modelBuilder.Entity("Inscripcioness.Models.Inscripcion", b =>
                 {
                     b.HasOne("Inscripcioness.Models.Alumno", "Alumno")
@@ -201,6 +210,7 @@ namespace Inscripcioness.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.HasOne("Inscripcioness.Models.Carrera", "Carrera")
                         .WithMany()
                         .HasForeignKey("CarreraId")
@@ -221,6 +231,9 @@ namespace Inscripcioness.Migrations
                         .IsRequired();
 
                     b.Navigation("AnioCarrera");
+=======
+                    b.Navigation("Alumno");
+>>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
                 });
 #pragma warning restore 612, 618
         }
