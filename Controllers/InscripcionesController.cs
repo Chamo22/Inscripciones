@@ -35,10 +35,9 @@ namespace Inscripcioness.Controllers
 
             var inscripcion = await _context.Inscripciones
                 .Include(i => i.Alumno)
-<<<<<<< HEAD
+
                 .Include(i => i.Carrera)
-=======
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (inscripcion == null)
             {
@@ -51,12 +50,8 @@ namespace Inscripcioness.Controllers
         // GET: Inscripciones/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
             ViewData["AlumnoID"] = new SelectList(_context.alumnos, "Id", "ApellidoNombre");
             ViewData["CarreraId"] = new SelectList(_context.carreras, "Id", "Nombre");
-=======
-            ViewData["AlumnoID"] = new SelectList(_context.alumnos, "Id", "Id");
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
             return View();
         }
 
@@ -74,10 +69,8 @@ namespace Inscripcioness.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlumnoID"] = new SelectList(_context.alumnos, "Id", "Id", inscripcion.AlumnoID);
-<<<<<<< HEAD
             ViewData["CarreraId"] = new SelectList(_context.carreras, "Id", "Id", inscripcion.CarreraId);
-=======
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
+
             return View(inscripcion);
         }
 
@@ -95,10 +88,8 @@ namespace Inscripcioness.Controllers
                 return NotFound();
             }
             ViewData["AlumnoID"] = new SelectList(_context.alumnos, "Id", "Id", inscripcion.AlumnoID);
-<<<<<<< HEAD
             ViewData["CarreraId"] = new SelectList(_context.carreras, "Id", "Id", inscripcion.CarreraId);
-=======
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
+
             return View(inscripcion);
         }
 
@@ -135,10 +126,8 @@ namespace Inscripcioness.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlumnoID"] = new SelectList(_context.alumnos, "Id", "Id", inscripcion.AlumnoID);
-<<<<<<< HEAD
             ViewData["CarreraId"] = new SelectList(_context.carreras, "Id", "Id", inscripcion.CarreraId);
-=======
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
+
             return View(inscripcion);
         }
 
@@ -152,10 +141,8 @@ namespace Inscripcioness.Controllers
 
             var inscripcion = await _context.Inscripciones
                 .Include(i => i.Alumno)
-<<<<<<< HEAD
                 .Include(i => i.Carrera)
-=======
->>>>>>> 0fcae931572882bbe34a601d55c11c335e90a28d
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (inscripcion == null)
             {
